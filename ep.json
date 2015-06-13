@@ -1,0 +1,11 @@
+{
+  "parts": [
+    {
+      "name": "ep_auth_author",
+      "hooks": {
+          "authenticate": "ep_auth_author/ep_auth_author",
+	  "handleMessage": "ep_auth_author/ep_auth_author"
+      }
+    }
+  ]
+}

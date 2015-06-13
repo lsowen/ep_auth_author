@@ -2,7 +2,7 @@
   "name": "ep_auth_author",
   "description": "Hooks into etherpad-lite authentication and gives users the same authorId each time they log in.",
   "author": "Logan Owen <lsowen@s1devops.com>",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "GPLv2",
   "repository": {
     "type": "git",

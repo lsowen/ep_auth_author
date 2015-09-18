@@ -32,6 +32,6 @@ Example:
 }
 ```
 
-In this example, the prefix which identifies the user as being managed by ep_auth_author is `author/`.  So the user `author/user` would log in with the username `user` and the password `changeme1`, which would "reconnect" the previous author (and thus user set edit color and author name) with the new login.  The optional `authorName` field can be used to set the default author name for that user.
+In this example, the prefix which identifies the user as being managed by ep_auth_author is `author/`.  So the user `author/user` would log in with the username `user` and the password `changeme1`, which would "reconnect" the previous author (and thus user set edit color and author name) with the new login.  The optional `author_name` field can be used to set the default author name for that user.
 
 The `admin` user is handled by the normal BasicAuth authentication, and does not "reconnect" previously set options.

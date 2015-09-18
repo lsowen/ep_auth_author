@@ -21,7 +21,7 @@ Example:
   "users": {
     "author/user": {
       "is_admin": false,
-      "authorName": "Test User",
+      "author_name": "Test User",
       "password": "changeme1"
     },
     "admin": {

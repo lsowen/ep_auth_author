@@ -73,12 +73,7 @@ exports.authenticate = function(hook_name, context, cb) {
 	var username = userpass.shift();
 	var password = userpass.join(':');
 
-	var username_prefix = settings.ep_auth_author.prefix;
-
-	if (username_prefix === undefined) {
-	    return cb([false]);
-	}
-
+	var username_prefix = settings.ep_auth_author && settings.ep_auth_author.prefix || "";
 	var prefixed_username = username_prefix + username;
 	
 	if (settings.users[prefixed_username] != undefined && settings.users[prefixed_username].password == password) {
@@ -87,7 +82,7 @@ exports.authenticate = function(hook_name, context, cb) {
 
 	    return( userManager.getAuthor4Username(prefixed_username, function(err, authorId) {
 		logger.debug('retrieved authorId ' + authorId + ' for username ' + prefixed_username);
-		context.req.session.auth_author = initializeAuthAuthorState(prefixed_username, authorId, context.req.session.user.author_name);
+		context.req.session.auth_author = initializeAuthAuthorState(prefixed_username, authorId, context.req.session.user.author_name || username);
 		return cb([true]);
 	    }) );
 	    
